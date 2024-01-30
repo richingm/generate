@@ -29,8 +29,8 @@ func (exec *Executor) Execute() (err error) {
 		if err = generateFile(exec.ModelPath, exec.ModelPkg, tmpl.StructTemplate, baseStruct.TableName, baseStruct); err != nil {
 			return err
 		}
-		//生成dao
-		if err = generateFile(exec.DaoPath, exec.DaoPkg, tmpl.DaoTemplate, fmt.Sprint(baseStruct.TableName, "_", "dao"), baseStruct); err != nil {
+		//生成repo
+		if err = generateFile(exec.DaoPath, exec.DaoPkg, tmpl.RepoTemplate, fmt.Sprint(baseStruct.TableName, "_", "dao"), baseStruct); err != nil {
 			return err
 		}
 	}
